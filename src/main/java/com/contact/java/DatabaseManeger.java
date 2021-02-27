@@ -7,7 +7,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.ui.Model;
 
 public class DatabaseManeger {
 
@@ -33,7 +32,7 @@ public class DatabaseManeger {
         template.update(sql);
     }
 
-    public List<contact> getAllContact(Model model) {
+    public List<contact> getAllContacts() {
         sql = "select * from contact";
         return template.query(sql, new RowMapper<contact>() {
 

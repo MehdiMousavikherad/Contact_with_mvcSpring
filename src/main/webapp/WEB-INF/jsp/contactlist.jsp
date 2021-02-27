@@ -1,0 +1,10 @@
+<html>
+    <head>
+        <title>
+            List
+        </title>
+    </head>
+    <body>
+        ${listcontact}
+    </body>
+</html>
