@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
+import jakarta.validation.Valid;
+
 public class DatabaseManeger {
 
     @Autowired
@@ -15,13 +17,13 @@ public class DatabaseManeger {
 
     String sql;
 
-    public void update(contact contact) {
+    public void update(@Valid contact contact) {
         sql = "update contact set id=" + contact.getId() + "name =" + contact.getName() + ",PhoneNumber="
                 + contact.getPhoneNumber() + ",gender=" + contact.getGender();
         template.update(sql, contact);
     }
 
-    public void save(contact contact) {
+    public void save(@Valid contact contact) {
         sql = "insert into contact(id,name,phonenumber,gender)values(" + contact.getId() + "," + contact.getName() + ","
                 + contact.getPhoneNumber() + "," + contact.getGender() + ")";
         template.update(sql, contact);

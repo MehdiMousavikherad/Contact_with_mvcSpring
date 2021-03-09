@@ -1,7 +1,9 @@
 package com.contact.java;
 
+import jakarta.validation.constraints.Size;
 
 public class contact {
+    @Size(min = 1,message = "required")
     int id;
     private String name;
     private String Gender;
@@ -30,7 +32,7 @@ public class contact {
     public void setPhoneNumber(long phoneNumber) {
         PhoneNumber = phoneNumber;
     }
-
+    
     public int getId() {
         return id;
     }
