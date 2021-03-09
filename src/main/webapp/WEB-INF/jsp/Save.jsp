@@ -7,6 +7,11 @@
 
             <head>
                 <title> authentication </title>
+                <style>
+                    .error {
+                        color: red
+                    }
+                </style>
             </head>
 
             <body>
@@ -18,12 +23,13 @@
                     <label for="name">name :</label>
                     <form:input type="text" id="name" path="name" /><br>
                     <label for="phonenumber">PhoneNumber :</label>
-                    <form:input type="text" id="phonenumber" path="PhoneNumber"><br>
-                        <label for="male"> male :</label>
-                        <form:radiobutton id="male" path="Gender" value="male" />
-                        <label for="female">female :</label>
-                        <form:radiobutton path="Gender" id="female" value="female" /><br>
-                        <input type="submit" value="submit">
+                    <form:input type="text" id="phonenumber" path="PhoneNumber">
+                        <form:error path="phonenumber" cssClass="error"><br>
+                            <label for="male"> male :</label>
+                            <form:radiobutton id="male" path="Gender" value="male" />
+                            <label for="female">female :</label>
+                            <form:radiobutton path="Gender" id="female" value="female" /><br>
+                            <input type="submit" value="submit">
                 </form:form>
                 <h1>update contact</h1>
                 <form:form action="update" id="updateform">
